@@ -61,7 +61,7 @@ void Interpret(){
 			case '<': LocPointer == 0? LocPointer = 255 : LocPointer--; break;
 			case '+': memArray[LocPointer]++; break;
 			case '-': if(LocPointer>0)memArray[LocPointer]--; break;
-			case '.': kprint("output: "); kprint(toString(memArray[LocPointer], 10)); kprint("    "); break; 
+			case '.': kprint("output: "); kprint(ConvertToString(memArray[LocPointer], 10)); kprint("    "); break; 
 		}
 		i++;
 	}

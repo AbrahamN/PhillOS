@@ -101,7 +101,7 @@ void TextMode(){			// DUMMY FUNCTION (will eventually be useful)
 }
 
 void ExecCmd(int cmd, char* str){
-	//kprint(toString(cmd, 10));
+	//kprint(ConvertToString(cmd, 10));
 	
 	switch(cmd){
 		case 0: kprint("command not found \n"); break;
