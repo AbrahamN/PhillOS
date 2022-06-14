@@ -52,7 +52,7 @@ void load_shell(){
 	ColLine(24, BAR_COLOR);
 	ClrLine(24);
 	SetCursorPos(0,0);
-	kprint("MellOS shell - [");
+	kprint("PhillOS shell - [");
     kprint("task: ");
     kprint(currentTask);
     kprint(" | ");
@@ -68,7 +68,7 @@ void load_shell(){
 
 void refreshShell(){
 	SetCursorPos(0,0);
-	kprint("MellOS shell - [");
+	kprint("PhillOS shell - [");
     kprint("task: ");
     kprint(currentTask);
     kprint(" | ");

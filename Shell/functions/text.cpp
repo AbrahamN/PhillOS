@@ -1,9 +1,11 @@
 #include "../../Drivers/VGA_Text.h"
+//#include "text.h"
+
 #define FDEF(name) void name(const char* s)
 
 extern uint16_t CursorPos;
 
-FDEF(echo){
+FDEF (echo){
     kprint(s+1);
 }
 

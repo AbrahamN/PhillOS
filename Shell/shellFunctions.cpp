@@ -14,7 +14,7 @@ extern uint16_t CursorPos;
 
 static const char *  const helpList[5] = {                  // find better (dynamic) way
     "  help: shows command list\n",
-    "  echo [text]: prints text\n",
+    "  echo [text]: prints11! text\n",
     "  usedmem: shows dynamic memory usage\n",
     "  floppy:\n         list: shows list of connected floppy drives\n         []: shows floppy help\n",
     "  clear: clears the screen\n"
@@ -38,7 +38,7 @@ void helpCMD(const char* s){
    
 }
 
-shellfunction shellf(void (*Fptr)(const char *), char* Alias, char* Help){
+shellfunction shellf(void (*Fptr)(const char *), const char* Alias, const char* Help){
     shellfunction f;
     f.fptr = Fptr;
     kprint("<<");

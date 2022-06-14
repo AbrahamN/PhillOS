@@ -3,10 +3,10 @@
 
 #include "../Utils/Typedefs.h"
 
-typedef struct shellfunction{
+struct shellfunction{
     void (*fptr)(const char *);
-    char* alias;
-    char* help;
+    const char* alias;
+    const char* help;
 };
 
 shellfunction* TryGetCMD(char* cmdbuf);
