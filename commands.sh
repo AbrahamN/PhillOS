@@ -55,6 +55,7 @@ i386-elf-gcc -ffreestanding -m32 -g -c "$shell_path/functions/text.cpp" -o "$bui
 i386-elf-gcc -ffreestanding -m32 -g -c "$shell_path/functions/memory.cpp" -o "$build_path/$shell_path/functions/memory.o" -I "$shell_path/functions"
 i386-elf-gcc -ffreestanding -m32 -g -c "$shell_path/functions/floppy.cpp" -o "$build_path/$shell_path/functions/floppy.o" -I "$shell_path/functions"
 i386-elf-gcc -ffreestanding -m32 -g -c "$shell_path/functions/misc.cpp" -o "$build_path/$shell_path/functions/misc.o" -I "$shell_path/functions"
+i386-elf-gcc -ffreestanding -m32 -g -c "$shell_path/functions/calculator.cpp" -o "$build_path/$shell_path/functions/calculator.o" -I "$shell_path/functions"
 
 echo Linking:
 i386-elf-ld \
@@ -83,6 +84,7 @@ i386-elf-ld \
     "$build_path/$shell_path/functions/memory.o" \
     "$build_path/$shell_path/functions/floppy.o" \
     "$build_path/$shell_path/functions/misc.o" \
+    "$build_path/$shell_path/functions/calculator.o" \
     --oformat binary
 
 

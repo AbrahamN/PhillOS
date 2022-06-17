@@ -58,7 +58,7 @@ void load_shell(){
     kprint(" | ");
     kprint("dir: -");
     kprint("]\n");
-    kprint("Work in progress, ");
+    kprint("Hello!! Work in progress, ");
     kprintCol("press F1 to use the old CMD mode.\n\n", ERROR_COLOR);
 	CommandCursor = CursorPos;
 	SetCursorPosRaw(1920);

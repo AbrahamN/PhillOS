@@ -12,13 +12,13 @@ extern const char* currentTask;
 
 extern uint16_t CursorPos;
 
-static const char *  const helpList[5] = {                  // find better (dynamic) way
+static const char *  const helpList[6] = {                  // find better (dynamic) way
     "  help: shows command list\n",
     "  echo [text]: prints11! text\n",
     "  usedmem: shows dynamic memory usage\n",
     "  floppy:\n         list: shows list of connected floppy drives\n         []: shows floppy help\n",
-    "  clear: clears the screen\n"
-    
+    "  clear: clears the screen\n",
+    "  calculator: starts a calculator\n"
 };
 
 // Bind this to CMDs and use the help texts for each command (that's the better way ^)
@@ -64,7 +64,8 @@ shellfunction CMDs[] = {
     CMDENTRY(&usedmem,  "usedmem",  "Shows dynamic memory usage"),
     CMDENTRY(&floppy,   "floppy",   "Shows list of connected floppy drives"),
     CMDENTRY(&clear,    "clear",    "Clears the screen"),
-    CMDENTRY(&hcf,      "hcf",      "Crashes your system")
+    CMDENTRY(&hcf,      "hcf",      "Crashes your system"),
+    CMDENTRY(&calculator,      "calc",      "Spins up a calculator")
 };
 
 shellfunction* TryGetCMD(char* cmdbuf){

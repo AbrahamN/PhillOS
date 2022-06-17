@@ -7,6 +7,7 @@ void SetCursorPos(int x, int y);
 //void disable_cursor();
 //void enable_cursor(uint8_t cursor_start, uint8_t cursor_end);
 void kprint(const char* s);
+void kprint(unsigned long s);
 void kprintChar(const char c, bool caps);
 void MoveCursorLR(int i);
 void MoveCursorUD(int i);

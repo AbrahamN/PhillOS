@@ -89,7 +89,13 @@ extern "C" void main(){
 
 
     //kprint(strDecapitate("print pal", strLen("print ")));
-    //kprint("one\ntwo two \nthree three three \nfour four four four");
+	// for (int i = 0; i < 1000000; i++)
+	// {
+	// 	const char* str = (char*)i;
+    // 	kprint(str);
+	// 	/* code */
+	// }
+	
     //scrollPageUp();
     
 	return;

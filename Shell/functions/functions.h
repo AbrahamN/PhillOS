@@ -17,4 +17,6 @@ FHDR(floppy);
 // misc.cpp
 FHDR(hcf)
 
+// calculator.cpp
+FHDR(calculator)
 #endif

@@ -126,40 +126,51 @@ void scrollPageUp(){
 }
 
 
-void kprint(const char* s){		// Just a simple print function. Prints to screen at cursor position, moves the cursor at the end. 
+void kprint(const char* s)
+{		// Just a simple print function. Prints to screen at cursor position, moves the cursor at the end. 
 	uint8_t* charPtr = (uint8_t*)s;
 	uint16_t i = CursorPos;
-	while(*charPtr != 0){
-	switch (*charPtr) {
-		case 10:	if(i < 1920){
-                        if(CursorPos >= 1760){
-                            i = 1760;
-                            scrollPageUp();
-                        }else i+= VGA_WIDTH - i % VGA_WIDTH;	// ALSO ADDS RETURN TO NEWLINE!!
-                    }
-            
-	  			
-			break;
-		case 13:
-			i -= i % VGA_WIDTH;
-			break;
-		default:
-        if(i < 1840){
-            *(VIDEO_MEMORY + i * 2) = *charPtr;
-            i++;
-        }
-        else{
-            scrollPageUp();
-            i = 1760;
-        }
-	}
+	while(*charPtr != 0)
+	{
+		switch (*charPtr) 
+		{
+			case 10:	
+				if(i < 1920)
+				{
+					if(CursorPos >= 1760)
+					{
+						i = 1760;
+						scrollPageUp();
+					}
+					else 
+						i+= VGA_WIDTH - i % VGA_WIDTH;	// ALSO ADDS RETURN TO NEWLINE!!
+				}				
+				break;
+			case 13:
+				i -= i % VGA_WIDTH;
+				break;
+			default:
+				if(i < 1840)
+				{
+					*(VIDEO_MEMORY + i * 2) = *charPtr;
+					i++;
+				}
+				else
+				{
+					scrollPageUp();
+					i = 1760;
+				}
+		}
 
-	charPtr++;
+		charPtr++;
 	}
 	SetCursorPosRaw(i);
 	return;
 }
 
+void kprint(unsigned long s){	
+	kprint(toString(s, 10));
+}
 
 void kprintCol(const char* s, int col){		//Print: with colours!
   uint8_t* charPtr = (uint8_t*)s;
